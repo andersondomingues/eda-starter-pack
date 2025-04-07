@@ -18,5 +18,4 @@ always @(posedge clock, negedge reset) begin
   end  
 end
 
-
 endmodule: mux2x1
