@@ -57,7 +57,7 @@ check_design –unresolved
 syn_generic
 write_netlist [current_design] > outputs/gen_netlist.v
 
-report_timing > ./reports/gen_report_timing.rpt
+report_timing -lint > ./reports/gen_report_timing.rpt
 report_power -by_hierarchy  > reports/gen_report_power.rpt
 report_area > ./reports/gen_report_area.rpt
 report_qor > ./reports/gen_report_qor.rpt
@@ -67,7 +67,7 @@ write_sdc > outputs/gen_dds_sdc.sdc
 syn_map
 write_netlist [current_design] > outputs/map_netlist.v
 
-report_timing > ./reports/map_report_timing.rpt
+report_timing -lint > ./reports/map_report_timing.rpt
 report_power -by_hierarchy  > reports/map_report_power.rpt
 report_area > ./reports/map_report_area.rpt
 report_qor > ./reports/map_report_qor.rpt
@@ -79,6 +79,3 @@ write_sdc > outputs/map_dds_sdc.sdc
 #write_netlist [current_design] > outputs/netlist.v
 
 write_snapshot -innovus -directory layout -tag logical [current_design] 
-
-# show results
-# gui_show
