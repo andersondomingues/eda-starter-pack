@@ -1,4 +1,8 @@
 module mux2x1 #()(
+
+  input logic clock,
+  input logic reset,
+
   input logic a,
   input logic b,
   input logic sel,
@@ -6,6 +10,13 @@ module mux2x1 #()(
   output logic out
 );
 
-assign out = (sel) ? a : b;
+always @(posedge clock, negedge reset) begin
+  if(~reset) begin
+    out <= 1'b0;
+  end else begin
+    out <= (sel) ? a : b;
+  end  
+end
+
 
 endmodule: mux2x1

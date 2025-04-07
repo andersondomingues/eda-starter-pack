@@ -14,4 +14,4 @@ all:
 	$(CMD) vivado -mode tcl -source nexys-a7.do
 	
 clean:
-	rm -rf vivado*.jou vivado*.log .Xil
+	rm -rf *.jou *.log .Xil vivado_*
