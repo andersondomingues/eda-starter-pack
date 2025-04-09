@@ -11,11 +11,12 @@ set LEF_CORE_LR  {C28SOI_SC_12_CORE_LR@2.0@20130411.0/CADENCE/LEF/C28SOI_SC_12_C
 set LEF_PR_LR    {C28SOI_SC_12_PR_LR@2.0@20130412.0/CADENCE/LEF/C28SOI_SC_12_PR_LR_soc.lef}
 set LEF_CLK_LR   {C28SOI_SC_12_CLK_LR@2.1@20130621.0/CADENCE/LEF/C28SOI_SC_12_CLK_LR_soc.lef}
 
-set GOLDEN_MODULE {../synth/fv/}${TOP_MODULE}{/fv_map.v.gz}
 set GOLDEN_TOP_MODULE   {mux2x1}
+set GOLDEN_MODULE ../synth/fv/${GOLDEN_TOP_MODULE}/fv_map.v.gz
 
-set REVISED_MODULE {../synth/fv/}${TOP_MODULE}{/fv_map.v.gz}
 set REVISED_TOP_MODULE   {mux2x1}
+set REVISED_MODULE ../synth/fv/${REVISED_TOP_MODULE}/fv_map.v.gz
+
 
 # add path to the liberty libraries
 add_search_path -both ${LIBERTY_PATH}
