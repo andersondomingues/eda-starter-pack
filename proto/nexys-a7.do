@@ -12,6 +12,7 @@ add_files ../rtl/bshifter4.sv
 add_files ../rtl/bshifter16.sv
 
 # fpga-specific files
+add_files ./nexys-a7/dspl_drv_NexysA7.v
 add_files ./nexys-a7/${TOP_MODULE}.sv
 
 import_files -force

@@ -1,15 +1,18 @@
 module bshifter16 #()(
-  input  wire logic[15:0] val, 
-  input  wire logic ssl,
-  input  wire logic i,
-  output wire logic[15:0] res,
-  output wire logic o
+  input  logic clock,
+  input  logic reset,
+  input  logic[15:0] val, 
+  input  logic ssl,
+  input  logic i,
+  output logic[15:0] res,
+  output logic o
 );
 
-wire[3:0] out;
-wire[3:0] src;
+logic[3:0] out;
+logic[3:0] src;
 
 bshifter4 shifter16_3(
+  .clock(clock), .reset(reset),
   .val(val[15:12]),
   .ssl(ssl),
   .i(src[3]),
@@ -18,6 +21,7 @@ bshifter4 shifter16_3(
 );
 
 bshifter4 shifter16_2(
+  .clock(clock), .reset(reset),
   .val(val[11:8]),
   .ssl(ssl),
   .i(src[2]),
@@ -26,6 +30,7 @@ bshifter4 shifter16_2(
 );
 
 bshifter4 shifter16_1(
+  .clock(clock), .reset(reset),
   .val(val[7:4]),
   .ssl(ssl),
   .i(src[1]),
@@ -34,6 +39,7 @@ bshifter4 shifter16_1(
 );
 
 bshifter4 shifter16_0(
+  .clock(clock), .reset(reset),
   .val(val[3:0]),
   .ssl(ssl),
   .i(src[0]),

@@ -8,8 +8,15 @@ module tb_bshifter4 #();
   reg o; 
   reg[3:0] res;
 
+  logic clock;
+  logic reset;
+
+  always #2 clock = ~clock;
+
   // instancia um novo shifter de 4 bits
   bshifter4 shifter_a(
+    .clock(clock),
+    .reset(reset),
     .val(val), 
     .ssl(ssl),
     .i(i),
@@ -17,7 +24,11 @@ module tb_bshifter4 #();
     .res(res)
   );
 
-  initial begin    
+  initial begin  
+
+    reset = 1;
+    #2 reset = 0;
+
     val = 'b1110;    // entrada no shifter em 1110
     ssl = 'b1;       // configura shift para direita
     i = 'b0;         // insere um zero pela esquerda

@@ -52,7 +52,7 @@ set clock [define_clock -period ${CLOCK_PERIOD} -name ${CLOCK_PIN} [clock_ports]
 #dc::set_clock_transition .1 ${clock}
 
 # check unresolved references
-check_design –unresolved 
+check_design unresolved 
 
 syn_generic
 write_netlist [current_design] > outputs/gen_netlist.v
