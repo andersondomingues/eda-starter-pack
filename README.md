@@ -1,4 +1,4 @@
-# EDA Tools Student Starter Package 
+# EDA Tools Student Starter Pack
 
 This is a template project to help students during their first steps with a plenty of EDA tools. 
 
